@@ -1,0 +1,29 @@
+[
+  {
+    "Plan": {
+      "Node Type": "Sort",
+      "Parallel Aware": false,
+      "Async Capable": false,
+      "Startup Cost": 8265.80,
+      "Total Cost": 8367.04,
+      "Plan Rows": 40493,
+      "Plan Width": 38,
+      "Sort Key": ["created_at DESC"],
+      "Plans": [
+        {
+          "Node Type": "Seq Scan",
+          "Parent Relationship": "Outer",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Relation Name": "orders",
+          "Alias": "orders",
+          "Startup Cost": 0.00,
+          "Total Cost": 5167.00,
+          "Plan Rows": 40493,
+          "Plan Width": 38,
+          "Filter": "(created_at > (now() - '7 days'::interval))"
+        }
+      ]
+    }
+  }
+]
